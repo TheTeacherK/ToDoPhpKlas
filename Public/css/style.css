@@ -1,0 +1,203 @@
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #333;
+  }
+  
+  li {
+    float: left;
+  }
+  
+  li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+  }
+  
+  li a:hover {
+    background-color: #111;
+    color:#e5950a;
+  }
+
+a {
+  text-decoration: none;
+}
+
+a:hover {
+  color: #333;
+
+}
+
+.back{
+  background-color: #e5950a; /* Green */
+  border: none;
+  color: white;
+  padding: 10px 13px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 12px;
+  border-radius: 5px;
+}
+
+.back:hover{
+  background-color: #333;
+  color:white;
+}
+
+.footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: #333;
+  color: white;
+  text-align: center;
+}
+
+main {
+  height: 100%;
+  width: 100%;
+  margin: 0 auto;
+  background-color: #149fda;
+  padding: 50px;
+}
+
+
+.container{
+  width: 60%;
+  margin: 0 auto;
+}
+
+body{
+  color:aliceblue;
+  height: 100vh;
+  width: 100vw;
+}
+
+.card a:hover {
+  color:rgb(26, 29, 26);
+}
+
+
+
+.status{
+background-color: #149fda;
+border: none;
+color: white;
+cursor: pointer;
+
+}
+
+.status:hover{
+  color: #333;
+  
+  }
+
+  
+
+table{
+        width: 100%;
+        border-collapse: collapse;
+    }
+
+th, td {
+        border: 1px solid #e5950a;
+        padding: 10px;
+        text-align: left;
+        
+    }
+
+th {
+        background-color: #f2f2f2;
+        color:#333;
+    }
+
+    @media only screen and (max-width: 600px) {
+        /* Hide the table headers on small screens to save space */
+        th {
+            display: none;
+        }
+
+        /* Center-align the content in the table cells on small screens */
+        td {
+            text-align: center;
+        }
+    }
+  
+    td.completed-task {
+      text-decoration: line-through;
+  }
+
+  input[type=text],
+  select {
+      width: 100%;
+      padding: 12px 20px;
+      margin: 8px 0;
+      display: inline-block;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      box-sizing: border-box;
+  }
+
+  textarea {
+      width: 100%;
+      padding: 12px 20px;
+      margin: 8px 0;
+      display: inline-block;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      box-sizing: border-box;
+  }
+
+  input[type=submit] {
+      width: 100%;
+      background-color: #e5950a;
+      color: white;
+      padding: 14px 20px;
+      margin: 8px 0;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+  }
+
+  input[type=submit]:hover {
+      background-color: #333;
+  }
+
+
+  @media screen and (max-width: 750px) {  
+    .responsive thead {
+      visibility: hidden;
+      height: 0;
+      position: absolute;
+    }
+    
+    .responsive tr {
+      display: block;
+      margin-bottom: .625em;
+    }
+    
+    .responsive td {
+      border: 1px solid;
+      border-bottom: none;
+      display: block;
+      font-size: .8em;
+      text-align: right;
+    }
+    
+    .responsive td::before {
+      content: attr(data-label);
+      float: left;
+      font-weight: bold;
+      text-transform: uppercase;
+    }
+    
+    .responsive td:last-child {
+      border-bottom: 1px solid;
+    }
+  }
