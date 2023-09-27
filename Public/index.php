@@ -15,7 +15,7 @@ $dataSet = GetTaken();
             <thead>
             </thead>
             <tbody>
-                <!-- Loop over de array met rusultaten van de query --->
+                <!-- Loop over de array met resultaten van de query --->
                 <?php foreach ($dataSet as $task): ?>
                 <tr>
                     <td>
