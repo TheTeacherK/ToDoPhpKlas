@@ -1,5 +1,7 @@
 <?php
 
+// start file die alle nodige bestanden inlaad voor onze app
+
 require_once('database.php');
 require_once('db_credentials.php');
 require_once('function.php');
