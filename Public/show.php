@@ -29,7 +29,7 @@ $dataSet = GetTakenById($taakid);
             <tbody>
                 <?php foreach ($dataSet as $task):
 
-
+                    // de status van 1 of 0 omzetten naar iets begrijpbaar voor de gebruiker
                     if ($task['status'] == 1) {
                         $status = "Taak afgehandeld";
                     } else {
@@ -38,24 +38,24 @@ $dataSet = GetTakenById($taakid);
 
 
                     ?>
-                    <tr>
-                        <td>
-                            <?php echo $task['titel']; ?>
-                        </td>
-                        <td>
-                            <?php echo $task['beschrijving_lang']; ?>
-                        </td>
-                        <td>
-                            <?php echo $status; ?>
-                        </td>
-                        <td>
-                            <?php echo $task['created_at']; ?>
-                        </td>
-                        <td>
-                            <?php echo $task['updated_at']; ?>
-                        </td>
-                    </tr>
-                    <?php
+                <tr>
+                    <td>
+                        <?php echo $task['titel']; ?>
+                    </td>
+                    <td>
+                        <?php echo $task['beschrijving_lang']; ?>
+                    </td>
+                    <td>
+                        <?php echo $status; ?>
+                    </td>
+                    <td>
+                        <?php echo $task['created_at']; ?>
+                    </td>
+                    <td>
+                        <?php echo $task['updated_at']; ?>
+                    </td>
+                </tr>
+                <?php
                 endforeach; ?>
             </tbody>
         </table>
