@@ -6,12 +6,16 @@ include '../Private/init.php';
 // opvragen URL parameter => Bij opvragen van de page GET
 $taakid = $_GET['id'];
 
+
+// als we een POST request doen:
 if (is_post_request()) {
 
     $result = delete_taak($taakid);
     header("location: index.php");
 
-} else {
+} 
+// als we een GET request doen:
+else {
     $dataSet = GetTakenById($taakid);
 }
 
@@ -36,15 +40,15 @@ if (is_post_request()) {
 
                     ?>
 
-                    <tr>
-                        <td>
-                            <?php echo $task['titel']; ?>
-                        </td>
-                        <td>
-                            <?php echo $task['beschrijving_lang']; ?>
-                        </td>
+                <tr>
+                    <td>
+                        <?php echo $task['titel']; ?>
+                    </td>
+                    <td>
+                        <?php echo $task['beschrijving_lang']; ?>
+                    </td>
 
-                    </tr>
+                </tr>
                 <?php endforeach; ?>
             </tbody>
         </table>

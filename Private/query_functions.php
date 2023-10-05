@@ -30,21 +30,29 @@ function GetTakenById($id)
 
 
 
-
+// functie om een nieuwe taak in de DB te bewaren met als parameter een array
+// die de nodige info over de taak bewaard.
 function create_Taak($taakinfo)
 {
     global $link;
 
+    // lokale variable maken om de gegevens uit de array te halen
     $taakinsert = $taakinfo['titel'];
     $taakbeschinsert = $taakinfo['beschrijving_lang'];
 
+    // SQL statement
+                                                            // we verwachten een string door ' ' rond onze var te zetten , zetten we de inhoud om naar een string
     $sql = "INSERT INTO taken(titel,beschrijving_lang) VALUES( ' $taakinsert ' , ' $taakbeschinsert' )";
 
+    // connectie en query op de DB los laten
     $result = mysqli_query($link, $sql);
 
+    // indien resultaat true is van onze query
     if ($result) {
+        // geven we de waarde true door 
         return true;
     } else {
+        // geven we een error en sluiten de connectie met de DB
         echo mysqli_error($link);
         db_disconnect($link);
         exit;
@@ -52,7 +60,8 @@ function create_Taak($taakinfo)
 
 }
 
-
+// functie om een taak te updaten. 
+// we hebben als paramater de taak iD en de nieuwe info voor de taak
 function update_taakstatus($id, $nieuwestaat)
 {
     global $link;
@@ -68,6 +77,9 @@ function update_taakstatus($id, $nieuwestaat)
 }
 
 
+// functie om een taak te verwijderen uit de DB
+// paramater: de taak id
+// limit op 1. Max 1 taak verwijderen
 function delete_taak($id)
 {
     global $link;
