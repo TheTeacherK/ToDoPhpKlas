@@ -31,4 +31,57 @@ function GetTakenById($id)
 
 
 
+function create_Taak($taakinfo)
+{
+    global $link;
+
+    $taakinsert = $taakinfo['titel'];
+    $taakbeschinsert = $taakinfo['beschrijving_lang'];
+
+    $sql = "INSERT INTO taken(titel,beschrijving_lang) VALUES( ' $taakinsert ' , ' $taakbeschinsert' )";
+
+    $result = mysqli_query($link, $sql);
+
+    if ($result) {
+        return true;
+    } else {
+        echo mysqli_error($link);
+        db_disconnect($link);
+        exit;
+    }
+
+}
+
+
+function update_taakstatus($id, $nieuwestaat)
+{
+    global $link;
+
+    $sql = "UPDATE taken SET status = $nieuwestaat WHERE id = $id LIMIT 1";
+    $result = mysqli_query($link, $sql);
+    if ($result) {
+        header("location: show.php?id=$id ");
+        return true;
+
+    }
+
+}
+
+
+function delete_taak($id)
+{
+    global $link;
+
+    $sql = "DELETE FROM taken WHERE id =$id LIMIT 1 ";
+    $result = mysqli_query($link, $sql);
+    if ($result) {
+        return true;
+    }
+
+
+
+}
+
+
+
 ?>
